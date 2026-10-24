@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Leads | Carl's &amp; Son Flooring</title>
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <style>
+    :root { --ink: #1f2320; --cream: #f7f3e8; --gold: #c9b97a; --line: #e2dccb; --muted: #646a63; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: #f4f1e8; color: #2a2d29; }
+    header { background: var(--ink); color: var(--cream); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    header div { display: flex; align-items: center; gap: 10px; font-weight: 700; }
+    header img { width: 38px; border-radius: 50%; }
+    header button { background: transparent; border: 1px solid #5c625c; color: var(--cream); padding: 8px 14px; border-radius: 999px; cursor: pointer; }
+    main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 60px; }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-bottom: 18px; }
+    .stat { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+    .stat b { display: block; font-size: 1.6rem; }
+    .stat span { color: var(--muted); font-size: .82rem; text-transform: capitalize; }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+    .filters button { border: 1px solid var(--line); background: #fff; padding: 8px 14px; border-radius: 999px; cursor: pointer; text-transform: capitalize; font-weight: 600; }
+    .filters button.on { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+    .lead { background: #fff; border: 1px solid var(--line); border-left: 5px solid var(--gold); border-radius: 12px; padding: 18px; margin-bottom: 14px; }
+    .lead[data-status="won"] { border-left-color: #2f6b3a; }
+    .lead[data-status="lost"] { border-left-color: #a33b2b; opacity: .8; }
+    .lead__top { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: flex-start; }
+    .lead h2 { margin: 0 0 4px; font-size: 1.15rem; }
+    .lead time { color: var(--muted); font-size: .82rem; }
+    .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 6px 18px; margin: 12px 0; font-size: .92rem; }
+    .meta b { color: var(--muted); font-weight: 600; }
+    .msg { background: #faf8f2; border-radius: 8px; padding: 10px 12px; white-space: pre-wrap; font-size: .93rem; }
+    .actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    select, textarea { font: inherit; border: 1px solid #d6cfba; border-radius: 8px; padding: 8px 10px; background: #fff; }
+    textarea { width: 100%; margin-top: 10px; min-height: 60px; }
+    .del { background: #fff; color: #a33b2b; border: 1px solid #e4b8b0; border-radius: 8px; padding: 8px 12px; cursor: pointer; font-weight: 600; }
+    .del:hover { background: #a33b2b; color: #fff; }
+    .empty { text-align: center; color: var(--muted); padding: 50px 0; }
+    a { color: #6b6232; }
+  </style>
+</head>
+<body>
+  <header>
+    <div><img src="/images/logo.jpg" alt="">Carl's &amp; Son — Leads</div>
+    <button id="logout">Sign out</button>
+  </header>
+  <main>
+    <section class="stats" id="stats"></section>
+    <nav class="filters" id="filters"></nav>
+    <section id="list"></section>
+  </main>
+  <script src="/admin/admin.js"></script>
+</body>
+</html>
